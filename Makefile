@@ -1,9 +1,9 @@
 NAME = libftprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ilibft -Iprintf
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-SRC = printf/ft_printf.c printf/ft_printf_utils.c printf/ft_putstr.c printf/ft_putnbr.c printf/ft_putchar.c
+SRC = printf/ft_printf.c printf/ft_printf_utils.c printf/ft_putstr.c printf/ft_putnbr.c printf/ft_putchar.c printf/tester.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:46:45 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/23 14:59:38 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:27:35 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_putnbr(int n)
 	count = 0;
 	prot = 0;
 	if (n == -2147483648)
-		return(edge_case(n));
+		return (edge_case (n));
 	if (n < 0)
 	{
 		prot = write(1, "-", 1);

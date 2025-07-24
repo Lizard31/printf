@@ -6,7 +6,7 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:41:59 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/23 15:09:10 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:27:01 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ int	count_digits_unsigned(unsigned int n)
 
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	int	count = 0;
+	int	count;
 
+	count = 0;
 	if (n >= 10)
 		count += ft_putnbr_unsigned(n / 10);
 	count += ft_putchar('0' + n % 10);
-
 	return (count);
 }
 
-static char	digit_to_hex(int digit, char *uppercase)
+static char	digit_to_hex(int digit, int uppercase)
 {
 	if (digit < 10)
 		return ('0' + digit);
@@ -70,7 +70,7 @@ static char	digit_to_hex(int digit, char *uppercase)
 		return ('a' + digit - 10);
 }
 
-int	ft_putnbr_hex(unsigned long n, char *uppercase)
+int	ft_putnbr_hex(unsigned long n, int uppercase)
 {
 	int		count;
 	char	hex_char;
