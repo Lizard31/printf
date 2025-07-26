@@ -6,7 +6,7 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:41:59 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/23 16:27:01 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/25 17:08:21 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,22 @@ int	count_digits_unsigned(unsigned int n)
 
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	int	count;
+	int		count;
+	int		temp;
+	char	digit;
 
 	count = 0;
 	if (n >= 10)
-		count += ft_putnbr_unsigned(n / 10);
-	count += ft_putchar('0' + n % 10);
-	return (count);
+	{
+		temp = ft_putnbr_unsigned(n / 10);
+		if (temp == -1)
+			return (-1);
+		count += temp;
+	}
+	digit = '0' + n % 10;
+	if (write(1, &digit, 1) == -1)
+		return (-1);
+	return (count + 1);
 }
 
 static char	digit_to_hex(int digit, int uppercase)
@@ -74,14 +83,12 @@ int	ft_putnbr_hex(unsigned long n, int uppercase)
 {
 	int		count;
 	char	hex_char;
-	int		prot;
 
 	count = 0;
 	if (n >= 16)
 		count += ft_putnbr_hex(n / 16, uppercase);
 	hex_char = digit_to_hex(n % 16, uppercase);
-	prot = write(1, &hex_char, 1);
-	if (prot == -1)
+	if (write(1, &hex_char, 1) == -1)
 		return (-1);
 	return (count + 1);
 }

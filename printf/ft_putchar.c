@@ -6,7 +6,7 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:43:07 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/23 14:43:45 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:44:36 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_putchar(int c)
 {
-	int	prot;
-
-	prot = write(1, &c, 1);
-	if (prot == -1)
+	if (write(1, &c, 1) == -1)
 		return (-1);
 	return (1);
 }

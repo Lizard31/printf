@@ -6,12 +6,19 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:52:07 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/23 16:10:00 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:57:26 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# define NULL_STRING "(ads)"
+# define NULL_STRING_LENGTH 5
+# ifdef LINUX
+#  define NULL_STRING "(ads)"
+#  define NULL_STRING_LENGTH 5
+# endif
 
 # include <stdarg.h>
 # include <unistd.h>

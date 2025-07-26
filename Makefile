@@ -1,7 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/07/24 12:40:32 by tbordian          #+#    #+#              #
+#    Updated: 2025/07/24 12:41:54 by tbordian         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
+RM = rm -f
 
 SRC = printf/ft_printf.c printf/ft_printf_utils.c printf/ft_putstr.c printf/ft_putnbr.c printf/ft_putchar.c printf/tester.c
 
@@ -13,10 +26,10 @@ $(NAME): $(OBJ)
 	$(AR) $@ $^
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
