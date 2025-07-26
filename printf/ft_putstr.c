@@ -6,12 +6,12 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:44:22 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/24 21:30:56 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/26 13:46:46 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-//"(null) problem"
+
 int	ft_putstr(char *str)
 {
 	int	count;

@@ -6,7 +6,7 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:41:59 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/25 17:08:21 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/26 13:41:59 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,17 @@ static char	digit_to_hex(int digit, int uppercase)
 int	ft_putnbr_hex(unsigned long n, int uppercase)
 {
 	int		count;
+	int		temp;
 	char	hex_char;
 
 	count = 0;
 	if (n >= 16)
-		count += ft_putnbr_hex(n / 16, uppercase);
+	{
+		temp = ft_putnbr_hex(n / 16, uppercase);
+		if (temp == -1)
+			return (-1);
+		count += temp;
+	}
 	hex_char = digit_to_hex(n % 16, uppercase);
 	if (write(1, &hex_char, 1) == -1)
 		return (-1);

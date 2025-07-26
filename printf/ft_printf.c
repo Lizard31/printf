@@ -6,25 +6,11 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:52:00 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/25 13:09:13 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/26 14:18:39 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// static int	convert_pointer(void *ptr)
-// {
-// 	unsigned long	addr;
-// 	int				count;
-
-// 	addr = (unsigned long)ptr;
-// 	count = 0;
-// 	if (!ptr)
-// 		return (write(1, "0x0", 3));
-// 	count += ft_putstr("0x");
-// 	count += ft_putnbr_hex(addr, 0);
-// 	return (count);
-// }
 
 static int	convert_pointer(void *ptr)
 {
@@ -35,7 +21,7 @@ static int	convert_pointer(void *ptr)
 	count = 0;
 	if (!ptr)
 	{
-		if (write(1, "0x0", 3) == -1)
+		if (write(1, NULL_STRING, 3) == -1)
 			return (-1);
 		return (3);
 	}
@@ -69,10 +55,6 @@ static int	format_specifier(const char *f, int i, va_list args)
 		return (ft_putchar('%'));
 	return (0);
 }
-
-// if(write(1, &, 1) == -1)
-// 	return(-1);
-// can't fuck with the prot for format_specifier, it doesn't like it
 
 int	ft_printf(const char *f, ...)
 {

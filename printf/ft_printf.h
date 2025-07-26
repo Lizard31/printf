@@ -6,23 +6,24 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:52:07 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/24 17:57:26 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/26 14:25:21 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define NULL_STRING "(ads)"
-# define NULL_STRING_LENGTH 5
-# ifdef LINUX
-#  define NULL_STRING "(ads)"
+# if defined(__linux__)
+#  define NULL_STRING "(nil)"
 #  define NULL_STRING_LENGTH 5
+# elif defined(__APPLE__)
+#  define NULL_STRING "0x0"
+#  define NULL_STRING_LENGTH 3
 # endif
 
 # include <stdarg.h>
-# include <unistd.h>
 # include <stdio.h>
+# include <unistd.h>
 
 int		ft_printf(const char *f, ...);
 int		ft_putchar(int c);
