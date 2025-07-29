@@ -6,11 +6,18 @@
 /*   By: tbordian <tbordian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:52:00 by tbordian          #+#    #+#             */
-/*   Updated: 2025/07/26 14:18:39 by tbordian         ###   ########.fr       */
+/*   Updated: 2025/07/29 13:39:15 by tbordian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_putchar(int c)
+{
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	return (1);
+}
 
 static int	convert_pointer(void *ptr)
 {
